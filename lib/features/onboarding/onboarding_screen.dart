@@ -1,10 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:curreny_labs/size_config.dart';
-
 import 'onboarding_contents.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({Key? key}) : super(key: key);
+  const OnboardingScreen({super.key});
 
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
@@ -26,15 +25,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     Color(0xffDCF6E6),
   ];
 
-  AnimatedContainer _buildDots({
-    int? index,
-  }) {
+  AnimatedContainer _buildDots({int? index}) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
       decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(
-          Radius.circular(50),
-        ),
+        borderRadius: BorderRadius.all(Radius.circular(50)),
         color: Color(0xFF000000),
       ),
       margin: const EdgeInsets.only(right: 5),
@@ -46,10 +41,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
-    double width = SizeConfig.screenW!;
-    double height = SizeConfig.screenH!;
-
     return Scaffold(
       backgroundColor: colors[_currentPage],
       body: SafeArea(
@@ -67,22 +58,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     padding: const EdgeInsets.all(40.0),
                     child: Column(
                       children: [
-                        Expanded( // Wrap the Image.asset with Expanded
-                          child: Image.asset(
-                            contents[i].image,
-                            // Remove fixed height here, let it be flexible
-                          ),
-                        ),
-                        SizedBox(
-                          height: (height >= 840) ? 60 : 30,
-                        ),
+                        Expanded(child: SvgPicture.asset(contents[i].image)),
+                        SizedBox(height: 60),
                         Text(
                           contents[i].title,
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: "Mulish",
                             fontWeight: FontWeight.w600,
-                            fontSize: (width <= 550) ? 30 : 35,
+                            fontSize: 30,
                           ),
                         ),
                         const SizedBox(height: 15),
@@ -91,7 +75,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           style: TextStyle(
                             fontFamily: "Mulish",
                             fontWeight: FontWeight.w300,
-                            fontSize: (width <= 550) ? 17 : 25,
+                            fontSize: 17,
                           ),
                           textAlign: TextAlign.center,
                         )
@@ -120,20 +104,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           padding: const EdgeInsets.all(30),
                           child: ElevatedButton(
                             onPressed: () {},
-                            child: const Text("START"),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50),
                               ),
-                              padding: (width <= 550)
-                                  ? const EdgeInsets.symmetric(
-                                      horizontal: 100, vertical: 20)
-                                  : EdgeInsets.symmetric(
-                                      horizontal: width * 0.2, vertical: 25),
-                              textStyle:
-                                  TextStyle(fontSize: (width <= 550) ? 13 : 17),
+                              padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
+                              textStyle: TextStyle(fontSize: 13),
                             ),
+                            child: const Text("START"),
                           ),
                         )
                       : Padding(
@@ -145,16 +124,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 onPressed: () {
                                   _controller.jumpToPage(2);
                                 },
-                                child: const Text(
-                                  "SKIP",
-                                  style: TextStyle(color: Colors.black),
-                                ),
                                 style: TextButton.styleFrom(
                                   elevation: 0,
                                   textStyle: TextStyle(
                                     fontWeight: FontWeight.w600,
-                                    fontSize: (width <= 550) ? 13 : 17,
+                                    fontSize: 17,
                                   ),
+                                ),
+                                child: const Text(
+                                  "SKIP",
+                                  style: TextStyle(color: Colors.black),
                                 ),
                               ),
                               ElevatedButton(
@@ -164,25 +143,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     curve: Curves.easeIn,
                                   );
                                 },
-                                child: const Text("NEXT"),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.black,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(50),
                                   ),
                                   elevation: 0,
-                                  padding: (width <= 550)
-                                      ? const EdgeInsets.symmetric(
-                                          horizontal: 30, vertical: 20)
-                                      : const EdgeInsets.symmetric(
-                                          horizontal: 30, vertical: 25),
-                                  textStyle: TextStyle(
-                                      fontSize: (width <= 550) ? 13 : 17),
+                                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                                  textStyle: TextStyle(fontSize: 13),
                                 ),
+                                child: const Text("NEXT"),
                               ),
                             ],
                           ),
-                        )
+                        ),
                 ],
               ),
             ),
