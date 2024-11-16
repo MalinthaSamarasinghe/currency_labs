@@ -59,6 +59,10 @@ dependencies:
   package_info_plus: ^8.1.1
   # adapting screen and font size.Let your UI display a reasonable layout on different screen sizes
   flutter_screenutil: ^5.9.3
+  # A set of widgets that can be used to define a readable responsive UI for widgets.
+  responsive_builder: ^0.7.1
+  # A Flutter implementation of slidable list item with directional slide actions that can be dismissed.
+  flutter_slidable: ^3.1.1
   # automatically resizes text to fit perfectly within its bounds
   auto_size_text: ^3.0.0
   # to show images from the internet and keep them in the cache directory
@@ -77,6 +81,12 @@ dependencies:
   image_cropper: ^8.0.2
   # UUID Generator and Parser for Dart
   uuid: ^4.5.1
+  # core Dropdown Button widget with steady dropdown menu and many other options you can customize to your needs
+  dropdown_button2: ^2.3.8
+  # Utilities for handling media (MIME) types, including determining a type from a file extension and file contents.
+  mime: ^2.0.0
+  # Classes and helper functions that support JSON code generation via the `json_serializable` package.
+  json_annotation: ^4.8.1
 
 dev_dependencies:
   flutter_test:
@@ -87,6 +97,7 @@ dev_dependencies:
   freezed: ^2.5.7
   json_serializable: ^6.8.0
   flutter_launcher_icons: ^0.14.1
+  change_app_package_name: ^1.4.0
 
 flutter_launcher_icons:
   android: true
