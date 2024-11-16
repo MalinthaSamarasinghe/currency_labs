@@ -1,0 +1,91 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+*.tmp
+*.temp
+*.bak
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+.packages
+coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Sensitive files
+.env
+keys.json
+
+# iOS
+ios/Flutter/.generated
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/*.xcworkspace/
+ios/Flutter/*.xcodeproj/
+ios/Flutter/DerivedData/
+ios/Flutter/.vscode/
+ios/.flutter-plugins
+*.xcworkspace
+*.xcodeproj
+
+# Android
+.android/
+app/build/
+
+# Generated file logs
+# Keep pubspec.lock for application packages. Remove for libraries/packages.
+# Uncomment below if you're creating a library/package.
+# pubspec.lock
+
+# MacOS
+macos/Flutter/ephemeral/
+
+# Windows
+windows/Flutter/ephemeral/
+
+# Web
+web/.dart_tool/
+web/.flutter-plugins
+
+# Firebase
+firebase_app_id_file.json
+
+# Linux
+linux/Flutter/ephemeral/
