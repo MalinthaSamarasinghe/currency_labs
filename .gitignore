@@ -51,6 +51,18 @@ app.*.map.json
 .env
 keys.json
 
+# Firebase
+firebase_app_id_file.json
+
+# Generated file logs
+# Keep pubspec.lock for application packages. Remove for libraries/packages.
+# Uncomment below if you're creating a library/package.
+# pubspec.lock
+
+# Android
+.android/
+app/build/
+
 # iOS
 ios/Flutter/.generated
 ios/Pods/
@@ -65,15 +77,6 @@ ios/.flutter-plugins
 *.xcworkspace
 *.xcodeproj
 
-# Android
-.android/
-app/build/
-
-# Generated file logs
-# Keep pubspec.lock for application packages. Remove for libraries/packages.
-# Uncomment below if you're creating a library/package.
-# pubspec.lock
-
 # MacOS
 macos/Flutter/ephemeral/
 
@@ -83,9 +86,6 @@ windows/Flutter/ephemeral/
 # Web
 web/.dart_tool/
 web/.flutter-plugins
-
-# Firebase
-firebase_app_id_file.json
 
 # Linux
 linux/Flutter/ephemeral/
