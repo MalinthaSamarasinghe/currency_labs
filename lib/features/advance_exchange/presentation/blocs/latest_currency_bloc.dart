@@ -83,11 +83,13 @@ class LatestCurrencyBloc extends HydratedBloc<LatestCurrencyEvent, LatestCurrenc
     if(state.savedCurrencyList.isNotEmpty) {
       SavedCurrencyEntity tempBaseLatestCurrency = state.baseLatestCurrency.copyWith(amount: num.tryParse(event.amount) ?? 1.00);
       emit(state.copyWith(
+        currencyStatus: BlocStateStatus.initial,
         savedCurrencyList: [],
         baseLatestCurrency: tempBaseLatestCurrency,
       ));
     } else {
       emit(state.copyWith(
+        currencyStatus: BlocStateStatus.initial,
         baseLatestCurrency: state.baseLatestCurrency.copyWith(amount: num.tryParse(event.amount) ?? 1.00),
       ));
     }
@@ -97,11 +99,13 @@ class LatestCurrencyBloc extends HydratedBloc<LatestCurrencyEvent, LatestCurrenc
     if(state.savedCurrencyList.isNotEmpty) {
       SavedCurrencyEntity tempBaseLatestCurrency = state.baseLatestCurrency.copyWith(base: event.currencySymbol, isoCode: event.isoCode);
       emit(state.copyWith(
+        currencyStatus: BlocStateStatus.loadSuccess,
         savedCurrencyList: [],
         baseLatestCurrency: tempBaseLatestCurrency,
       ));
     } else {
       emit(state.copyWith(
+        currencyStatus: BlocStateStatus.loadSuccess,
         baseLatestCurrency: state.baseLatestCurrency.copyWith(base: event.currencySymbol, isoCode: event.isoCode),
       ));
     }
@@ -123,13 +127,10 @@ class LatestCurrencyBloc extends HydratedBloc<LatestCurrencyEvent, LatestCurrenc
         } else {
           message = "Something went wrong. Please try again later!";
         }
-        /// Only emit if data not fetch at least one time (Because other times, preserved state will receive from HydratedBloc)
-        if (state.currencyStatus == BlocStateStatus.initial) {
-          emit(state.copyWith(
-            currencyStatus: BlocStateStatus.loadFailure,
-            errorMessage: message,
-          ));
-        }
+        emit(state.copyWith(
+          currencyStatus: BlocStateStatus.loadFailure,
+          errorMessage: message,
+        ));
       },
       (data) {
         final ratesMap = data.rates as Map<String, double>;

@@ -124,7 +124,6 @@ class _AdvanceExchangeScreenState extends State<AdvanceExchangeScreen> with Sing
                     ],
                     onTapCurrency: (country) {
                       context.read<LatestCurrencyBloc>().add(ChangeBaseCurrencyEvent(currencySymbol: country.currencyCode ?? "EUR", isoCode: country.isoCode ?? "DE"));
-                      Navigator.pop(context);
                     },
                   ),
                   SizedBox(height: 30.h),
