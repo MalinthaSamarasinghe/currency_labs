@@ -1,7 +1,7 @@
 class ApiEndpoints {
   /// Test Server
   static const baseURL = 'https://api.exchangeratesapi.io/v1';
-  static const apiKEY = '';
+  static const apiKEY = 'your_api_key_here';
   // static const baseImageUrl = '';
 
   /// Staging Server
