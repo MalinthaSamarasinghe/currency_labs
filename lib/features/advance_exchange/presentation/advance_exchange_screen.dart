@@ -22,7 +22,7 @@ class AdvanceExchangeScreen extends StatelessWidget {
         appBar: ScreenAppBar(
           color: kColorBlack,
           hasTitle: true,
-          title: LocaleKeys.features_customer_customers.tr(),
+          title: "Advanced Exchanger",
           statusBarType: StatusBarType.dark,
           leadingType: LeadingType.back,
           trailingType: TrailingType.none,
