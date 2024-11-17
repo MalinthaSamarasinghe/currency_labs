@@ -1,4 +1,4 @@
-# curreny_labs
+# currency_labs
 
 A new Flutter project.
 

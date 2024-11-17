@@ -1,4 +1,4 @@
-package com.app.labs_currency
+package com.app.labs.currency
 
 import io.flutter.embedding.android.FlutterActivity
 
