@@ -88,7 +88,8 @@ dependencies:
   # Classes and helper functions that support JSON code generation via the `json_serializable` package.
   json_annotation: ^4.9.0
   # Countries, codes, flags, currency and several way of picking them at your service...one widget away...
-  country_currency_pickers: ^3.0.0
+  country_currency_pickers:
+    path: packages/currency_picker
 
 dev_dependencies:
   flutter_test:

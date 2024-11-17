@@ -17,10 +17,10 @@ class AddLatestCurrencyEvent extends LatestCurrencyEvent {
   List<Object> get props => [currencySymbol, isoCode];
 }
 
-class ChangeAmountEvent extends LatestCurrencyEvent {
+class ChangeBaseAmountEvent extends LatestCurrencyEvent {
   final String amount;
 
-  const ChangeAmountEvent({
+  const ChangeBaseAmountEvent({
     required this.amount,
   });
 
@@ -28,17 +28,32 @@ class ChangeAmountEvent extends LatestCurrencyEvent {
   List<Object> get props => [amount];
 }
 
-class EditCurrencyEvent extends LatestCurrencyEvent {
-  final int index;
+class ChangeBaseCurrencyEvent extends LatestCurrencyEvent {
   final String currencySymbol;
+  final String isoCode;
 
-  const EditCurrencyEvent({
-    required this.index,
+  const ChangeBaseCurrencyEvent({
     required this.currencySymbol,
+    required this.isoCode,
   });
 
   @override
-  List<Object> get props => [index, currencySymbol];
+  List<Object> get props => [currencySymbol, isoCode];
+}
+
+class EditConvertedCurrencyEvent extends LatestCurrencyEvent {
+  final int index;
+  final String currencySymbol;
+  final String isoCode;
+
+  const EditConvertedCurrencyEvent({
+    required this.index,
+    required this.currencySymbol,
+    required this.isoCode,
+  });
+
+  @override
+  List<Object> get props => [index, currencySymbol, isoCode];
 }
 
 class RemoveCurrencyEvent extends LatestCurrencyEvent {

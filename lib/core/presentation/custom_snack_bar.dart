@@ -51,7 +51,7 @@ class CustomSnackBarContent extends StatelessWidget {
         color: snackBarTypes.backgroundColor,
         boxShadow: const [
           BoxShadow(
-            color: kShadowColor,
+            color: kColorShadow,
             offset: Offset(0, 4),
             blurRadius: 30,
             spreadRadius: 0,

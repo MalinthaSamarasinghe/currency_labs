@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-const kColorWhite = Color(0xfffdfafc);
 const kColorBlack = Color(0xff000000);
-const kColorGrey = Color(0xff808080);
+const kColorBackground = Color(0xff181818);
+const kColorCard = Color(0xff262425);
+const kColorShadow = Color(0x40000000);
+const kColorHeadings = Color(0xff777777);
+const kColorWhite = Color(0xfffdfafc);
 const kColorRed = Color(0xffFF0000);
-const kDividerColor = Color(0xffb3b3b3);
-const kSocialColor = Color(0xff3D4A5E);
-const kShadowColor = Color(0x40000000);
-const kSnackBarColor = Color(0xff004961);
 const kColorSnackBar = Color(0xFFFF507A);
 const kColorGreen = Color(0xFF3ED409);
-const kCardBg = Color(0xff262425);
-const kBg = Color(0xff181818);
+const kColorButtonTitle = Color(0xffb4eb86);
+const kColorButton = Color(0xFF31422f);

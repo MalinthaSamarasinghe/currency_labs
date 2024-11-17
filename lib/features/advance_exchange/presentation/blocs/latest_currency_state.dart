@@ -10,8 +10,8 @@ class LatestCurrencyState extends Equatable {
     this.currencyStatus = BlocStateStatus.initial,
     this.baseLatestCurrency = const SavedCurrencyEntity(
       timestamp: null,
-      isoCode: "US",
-      base: "USD",
+      isoCode: "DE",
+      base: "EUR",
       date: null,
       rates: 1.00,
       amount: 1.00,

@@ -64,8 +64,8 @@ class ScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
                 child: Center(
                   child: SvgPicture.asset(
                     "assets/svg/back_icon.svg",
-                    width: 26.w,
-                    height: 26.w,
+                    width: 23.w,
+                    height: 23.w,
                     colorFilter: ColorFilter.mode(contentColor, BlendMode.srcIn),
                   ),
                 ),

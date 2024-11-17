@@ -82,7 +82,7 @@ class _CurrencyLabsAppState extends State<CurrencyLabsApp> {
           home: ResponsiveBuilder(
               builder: (context, info) {
                 Globals.isMobile = info.isMobile;
-                debugPrint("Device Screen Type: ${info.deviceScreenType}");
+                // debugPrint("Device Screen Type: ${info.deviceScreenType}");
                 // debugPrint("ScreenSize.width: ${info.screenSize.width} | ScreenSize.height: ${info.screenSize.height}");
                 // debugPrint("Local Widget Size: ${info.localWidgetSize}");
                 // debugPrint("Refined Size: ${info.refinedSize}");
@@ -154,7 +154,7 @@ class _CurrencyLabsAppState extends State<CurrencyLabsApp> {
               color: kColorRed,
               boxShadow: const [
                 BoxShadow(
-                  color: kShadowColor,
+                  color: kColorShadow,
                   offset: Offset(0, 4),
                   blurRadius: 30,
                   spreadRadius: 0,

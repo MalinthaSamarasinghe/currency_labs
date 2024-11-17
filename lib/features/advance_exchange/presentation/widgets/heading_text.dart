@@ -17,7 +17,7 @@ class HeadingText extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: AutoSizeText(
         title,
-        style: kOpenSans700(context, color: isDarkMode ? kColorWhite : kColorBlack, fontSize: 14.5.sp),
+        style: kOpenSans700(context, color: isDarkMode ? kColorHeadings : kColorBlack, fontSize: 14.5.sp),
         overflow: TextOverflow.ellipsis,
         textAlign: TextAlign.start,
         minFontSize: 14,
