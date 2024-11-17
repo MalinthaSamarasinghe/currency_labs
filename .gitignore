@@ -52,7 +52,11 @@ app.*.map.json
 keys.json
 
 # Firebase
+firebase.json
 firebase_app_id_file.json
+firebase_options.dart
+google-services.json
+GoogleService-Info.plist
 
 # Generated file logs
 # Keep pubspec.lock for application packages. Remove for libraries/packages.
