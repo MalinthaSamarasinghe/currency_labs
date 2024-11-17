@@ -9,13 +9,13 @@ import 'core/locales/locale_keys.g.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/presentation/custom_snack_bar.dart';
 import 'core/blocs/authentication/auth_bloc.dart';
-import 'features/onboarding/onboarding_screen.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'features/advance_exchange/presentation/advance_exchange_screen.dart';
 
 class CurrencyLabsAppWrapper extends StatelessWidget {
   const CurrencyLabsAppWrapper({super.key});
@@ -134,9 +134,9 @@ class _CurrencyLabsAppState extends State<CurrencyLabsApp> {
     if(screenType == DeviceScreenType.mobile){
       switch (context.read<AuthBloc>().state.authenticationStatus) {
         case AuthStatus.authenticated:
-          return const OnboardingScreen();
+          return const AdvanceExchangeScreen();
         default:
-          return const OnboardingScreen();
+          return const AdvanceExchangeScreen();
       }
     } else {
       /// Currently supports only mobile portrait view.
@@ -198,7 +198,7 @@ class _CurrencyLabsAppState extends State<CurrencyLabsApp> {
         {
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const OnboardingScreen()), (route) => route.isFirst,
+            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreen()), (route) => route.isFirst,
           );
         }
         break;
@@ -207,7 +207,7 @@ class _CurrencyLabsAppState extends State<CurrencyLabsApp> {
           EasyLoading.dismiss();
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const OnboardingScreen()), (route) => route.isFirst,
+            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreen()), (route) => route.isFirst,
           );
         }
         break;
@@ -216,7 +216,7 @@ class _CurrencyLabsAppState extends State<CurrencyLabsApp> {
           EasyLoading.dismiss();
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const OnboardingScreen()), (route) => route.isFirst,
+            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreen()), (route) => route.isFirst,
           );
           Future.delayed(const Duration(milliseconds: 100), () {
             CustomSnackBar().showSnackBar(
@@ -232,7 +232,7 @@ class _CurrencyLabsAppState extends State<CurrencyLabsApp> {
           EasyLoading.dismiss();
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const OnboardingScreen()), (route) => route.isFirst,
+            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreen()), (route) => route.isFirst,
           );
           Future.delayed(const Duration(milliseconds: 100), () {
             CustomSnackBar().showSnackBar(
@@ -248,7 +248,7 @@ class _CurrencyLabsAppState extends State<CurrencyLabsApp> {
           EasyLoading.dismiss();
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const OnboardingScreen()), (route) => route.isFirst,
+            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreen()), (route) => route.isFirst,
           );
           Future.delayed(const Duration(milliseconds: 100), () {
             CustomSnackBar().showSnackBar(
