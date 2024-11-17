@@ -1,73 +1,8 @@
 {
-  "features": {
-    "login": {
-      "username": "Username",
-      "password": "Password",
-      "forgotPassword": "Forgot Password ?",
-      "rememberMe": "Remember Me",
-      "signIn": "Sign In"
-    },
-    "openCashRegister": {
-      "Location": "Location",
-      "cashInHand": "Cash in Hand",
-      "openCashRegister": "Open Cash Register",
-      "openRegister": "Open Register"
-    },
-    "home": {
-      "welcome": "Welcome",
-      "pos": "POS"
-    },
-    "customer": {
-      "customers": "Customers",
-      "customerSelectedSuccessfully": "The customer selected successfully!",
-      "customerCurrentlyInUse": "This customer is currently in use!"
-    },
-    "scan": {
-      "scanBarCode": "Scan Barcode"
-    },
-    "paymentSuccess": {
-      "saleAddedSuccessful": "Sale Added Successful",
-      "successfullyAddedSale": "You have successfully added the sale",
-      "backToHome": "Back to Home"
-    },
-    "product": {
-      "products": "Products",
-      "productAddedSuccessfully": "The product was added successfully!",
-      "ProductOutOfStock": "The product is out of stock!",
-      "productAlreadyAdded": "This product has already been added!"
-    }
-  },
   "common": {
     "validations": {
-      "email": {
-        "emailShouldNotEmpty": "Email shouldn't be empty!",
-        "validEmail": "Please enter a valid email!"
-      },
-      "password": {
-        "passwordLeastEight": "Password should be at least 8 characters long!",
-        "passwordLeastLower": "Password should contain at least one lowercase letter!",
-        "passwordLeastSpecial": "Password should contain at least one special character!",
-        "passwordLeastUpper": "Password should contain at least one uppercase letter!",
-        "passwordShouldNotEmpty": "Password shouldn't be empty!",
-        "passwordsNotMatch": "Passwords do not match!",
-        "confirmPasswordShouldNotEmpty": "Confirm password shouldn't be empty!"
-      },
       "common": {
         "shouldNotEmpty": "This field shouldn't be empty"
-      },
-      "location": {
-        "locationShouldNotEmpty": "Location shouldn't be empty!",
-        "validLocation": "Please enter a valid location!"
-      },
-      "cash": {
-        "cashShouldNotEmpty": "Cash in hand shouldn't be empty!",
-        "validCash": "Cash in hand shouldn't contain special characters!",
-        "validCashZero": "Cash in hand shouldn't be zero!"
-      },
-      "userName": {
-        "userNameShouldNotEmpty": "Username shouldn't be empty!",
-        "validUserName": "Username shouldn't contain special characters & numbers!",
-        "validUserNameLength": "Username should be at least two characters!"
       }
     },
     "errors": {
@@ -95,23 +30,9 @@
       }
     },
     "failure": {
-      "error": "Error",
-      "checkInternetConnection": "Please check your internet connection and try again!",
-      "dataFetchFailed": "Data fetching failed. Please try again later!",
-      "noDataAvailable ": "No Data Available!",
-      "noPermissionGranted": "No permission granted!",
       "sessionExpired": "Session expired. Please log in again!",
       "somethingWrongTryAgain": "Something went wrong. Please try again later!",
-      "accountDeleted": "Account Deleted Successfully!",
-      "noRelevantData": "Sorry we couldn't find any relevant data right now!"
-    },
-    "widgets": {
-      "pleaseWait": "Please Wait",
-      "underDevelopment": "Under Development!",
-      "waitingForData": "Waiting for data...",
-      "clear": "Clear",
-      "logout": "Logout",
-      "search": "Search"
+      "accountDeleted": "Account Deleted Successfully!"
     }
   }
 }
