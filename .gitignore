@@ -50,6 +50,7 @@ app.*.map.json
 # Sensitive files
 .env
 keys.json
+api_endpoints.dart
 
 # Firebase
 firebase.json
