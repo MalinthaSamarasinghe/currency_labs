@@ -45,7 +45,7 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-repo/currency_converter_app.git
+git clone https://github.com/MalinthaSamarasinghe/currency_labs.git
 ```
 
 ### 2. Install Dependencies
