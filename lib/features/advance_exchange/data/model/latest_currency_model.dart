@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:equatable/equatable.dart';
-import '../../domain/entities/latest_currency_entity.dart';
+import '../../domain/entities/latest_currency/latest_currency_entity.dart';
 
 LatestCurrencyModel latestCurrencyModelFromJson(String str) => LatestCurrencyModel.fromJson(json.decode(str));
 
@@ -45,6 +45,7 @@ class LatestCurrencyModel extends Equatable {
     return LatestCurrencyEntity(
       success: success,
       timestamp: timestamp,
+      isoCode: base,
       base: base,
       date: date,
       rates: rates,

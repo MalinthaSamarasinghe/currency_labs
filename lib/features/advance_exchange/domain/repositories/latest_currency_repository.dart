@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import '../../../../core/errors/failures.dart';
-import '../entities/latest_currency_entity.dart';
+import '../entities/latest_currency/latest_currency_entity.dart';
 
 abstract class LatestCurrencyRepository {
   Future<Either<Failure, LatestCurrencyEntity>> getLatestCurrency(LatestCurrencyParam param);

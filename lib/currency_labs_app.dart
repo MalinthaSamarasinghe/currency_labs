@@ -134,9 +134,9 @@ class _CurrencyLabsAppState extends State<CurrencyLabsApp> {
     if(screenType == DeviceScreenType.mobile){
       switch (context.read<AuthBloc>().state.authenticationStatus) {
         case AuthStatus.authenticated:
-          return const AdvanceExchangeScreen();
+          return const AdvanceExchangeScreenWrapper();
         default:
-          return const AdvanceExchangeScreen();
+          return const AdvanceExchangeScreenWrapper();
       }
     } else {
       /// Currently supports only mobile portrait view.
@@ -198,7 +198,7 @@ class _CurrencyLabsAppState extends State<CurrencyLabsApp> {
         {
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreen()), (route) => route.isFirst,
+            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreenWrapper()), (route) => route.isFirst,
           );
         }
         break;
@@ -207,7 +207,7 @@ class _CurrencyLabsAppState extends State<CurrencyLabsApp> {
           EasyLoading.dismiss();
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreen()), (route) => route.isFirst,
+            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreenWrapper()), (route) => route.isFirst,
           );
         }
         break;
@@ -216,7 +216,7 @@ class _CurrencyLabsAppState extends State<CurrencyLabsApp> {
           EasyLoading.dismiss();
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreen()), (route) => route.isFirst,
+            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreenWrapper()), (route) => route.isFirst,
           );
           Future.delayed(const Duration(milliseconds: 100), () {
             CustomSnackBar().showSnackBar(
@@ -232,7 +232,7 @@ class _CurrencyLabsAppState extends State<CurrencyLabsApp> {
           EasyLoading.dismiss();
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreen()), (route) => route.isFirst,
+            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreenWrapper()), (route) => route.isFirst,
           );
           Future.delayed(const Duration(milliseconds: 100), () {
             CustomSnackBar().showSnackBar(
@@ -248,7 +248,7 @@ class _CurrencyLabsAppState extends State<CurrencyLabsApp> {
           EasyLoading.dismiss();
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreen()), (route) => route.isFirst,
+            MaterialPageRoute(builder: (context) => const AdvanceExchangeScreenWrapper()), (route) => route.isFirst,
           );
           Future.delayed(const Duration(milliseconds: 100), () {
             CustomSnackBar().showSnackBar(

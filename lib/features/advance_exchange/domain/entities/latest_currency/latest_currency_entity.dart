@@ -7,6 +7,7 @@ part 'latest_currency_entity.g.dart';
 class LatestCurrencyEntity extends Equatable {
   final bool? success;
   final int? timestamp;
+  final String? isoCode;
   final String? base;
   final DateTime? date;
   final Map<String, double>? rates;
@@ -14,11 +15,12 @@ class LatestCurrencyEntity extends Equatable {
   const LatestCurrencyEntity({
     required this.success,
     required this.timestamp,
+    required this.isoCode,
     required this.base,
     required this.date,
     required this.rates,
   });
 
   @override
-  List<Object?> get props => [success, timestamp, date, rates];
+  List<Object?> get props => [success, timestamp, isoCode, base, date, rates];
 }

@@ -9,27 +9,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool hasTitle;
-  final Color color;
+  final Color contentColor;
   final StatusBarType statusBarType;
   final LeadingType leadingType;
   final TrailingType trailingType;
   final Function()? onLeadingPress;
   final Function()? onTrailingPress;
-  final void Function(String)? onPopupMenuPress;
-  final List<Map<String, String>>? trailingMenuItems;
 
   const ScreenAppBar({
     super.key,
     this.title = "",
     this.hasTitle = false,
-    this.color = kColorWhite,
+    this.contentColor = kColorWhite,
     this.statusBarType = StatusBarType.light,
     this.leadingType = LeadingType.back,
     this.trailingType = TrailingType.none,
     this.onLeadingPress,
     this.onTrailingPress,
-    this.onPopupMenuPress,
-    this.trailingMenuItems,
   });
 
   @override
@@ -47,9 +43,9 @@ class ScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: hasTitle
           ? AutoSizeText(
               title,
-              style: kOpenSans600(context, color: color, fontSize: 18.sp),
+              style: kOpenSans600(context, color: contentColor, fontSize: 16.sp),
               overflow: TextOverflow.ellipsis,
-              minFontSize: 18,
+              minFontSize: 16,
               maxLines: 1,
             )
           : Image.asset(
@@ -68,9 +64,9 @@ class ScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
                 child: Center(
                   child: SvgPicture.asset(
                     "assets/svg/back_icon.svg",
-                    width: 29.w,
-                    height: 29.w,
-                    colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+                    width: 26.w,
+                    height: 26.w,
+                    colorFilter: ColorFilter.mode(contentColor, BlendMode.srcIn),
                   ),
                 ),
               ),
@@ -87,7 +83,7 @@ class ScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
                           "assets/svg/menu.svg",
                           width: 20.w,
                           height: 14.h,
-                          colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+                          colorFilter: ColorFilter.mode(contentColor, BlendMode.srcIn),
                         ),
                       ),
                     ),
@@ -98,7 +94,7 @@ class ScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
             ? IconButton(
                 icon: const Icon(Icons.share_rounded),
                 onPressed: onTrailingPress,
-                color: color,
+                color: contentColor,
                 highlightColor: Colors.transparent,
                 splashColor: Colors.transparent,
               )

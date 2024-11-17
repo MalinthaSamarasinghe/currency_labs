@@ -11,6 +11,8 @@ abstract class _$LatestCurrencyEntityCWProxy {
 
   LatestCurrencyEntity timestamp(int? timestamp);
 
+  LatestCurrencyEntity isoCode(String? isoCode);
+
   LatestCurrencyEntity base(String? base);
 
   LatestCurrencyEntity date(DateTime? date);
@@ -26,6 +28,7 @@ abstract class _$LatestCurrencyEntityCWProxy {
   LatestCurrencyEntity call({
     bool? success,
     int? timestamp,
+    String? isoCode,
     String? base,
     DateTime? date,
     Map<String, double>? rates,
@@ -44,6 +47,9 @@ class _$LatestCurrencyEntityCWProxyImpl
 
   @override
   LatestCurrencyEntity timestamp(int? timestamp) => this(timestamp: timestamp);
+
+  @override
+  LatestCurrencyEntity isoCode(String? isoCode) => this(isoCode: isoCode);
 
   @override
   LatestCurrencyEntity base(String? base) => this(base: base);
@@ -65,6 +71,7 @@ class _$LatestCurrencyEntityCWProxyImpl
   LatestCurrencyEntity call({
     Object? success = const $CopyWithPlaceholder(),
     Object? timestamp = const $CopyWithPlaceholder(),
+    Object? isoCode = const $CopyWithPlaceholder(),
     Object? base = const $CopyWithPlaceholder(),
     Object? date = const $CopyWithPlaceholder(),
     Object? rates = const $CopyWithPlaceholder(),
@@ -78,6 +85,10 @@ class _$LatestCurrencyEntityCWProxyImpl
           ? _value.timestamp
           // ignore: cast_nullable_to_non_nullable
           : timestamp as int?,
+      isoCode: isoCode == const $CopyWithPlaceholder()
+          ? _value.isoCode
+          // ignore: cast_nullable_to_non_nullable
+          : isoCode as String?,
       base: base == const $CopyWithPlaceholder()
           ? _value.base
           // ignore: cast_nullable_to_non_nullable
