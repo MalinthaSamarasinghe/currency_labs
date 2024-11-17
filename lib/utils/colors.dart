@@ -8,3 +8,5 @@ const kDividerColor = Color(0xffb3b3b3);
 const kSocialColor = Color(0xff3D4A5E);
 const kShadowColor = Color(0x40000000);
 const kSnackBarColor = Color(0xff004961);
+const kColorSnackBar = Color(0xFFFF507A);
+const kColorGreen = Color(0xFF3ED409);

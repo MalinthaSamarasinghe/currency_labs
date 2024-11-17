@@ -7,13 +7,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:curreny_labs/main.dart';
+import 'package:currency_labs/currency_labs_app.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const CurrencyLabsAppWrapper());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
