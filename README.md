@@ -187,11 +187,19 @@ void _myFunction() {}
 - Testing: Implement comprehensive unit and integration tests to ensure the app's reliability and maintainability.
 
 # Features in Action
-| Mobile View                                                                                                           | Completed  |
-|-----------------------------------------------------------------------------------------------------------------------| - |
-| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_1.png"/> | ✅ |
-| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_2.png"/> | ✅ |
-| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_3.png"/> | ✅ |
-| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_4.png"/> | ✅ |
-| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_5.png"/> | ✅ |
-| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_6.png"/> | ✅ |
+| Mobile View                                                                                                      | Completed  |
+|------------------------------------------------------------------------------------------------------------------| - |
+| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_1.png"/>  | ✅ |
+| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_2.png"/>  | ✅ |
+| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_3.png"/>  | ✅ |
+| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_4.png"/>  | ✅ |
+| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_5.png"/>  | ✅ |
+| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_6.png"/>  | ✅ |
+| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_7.png"/>  | ✅ |
+| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_8.png"/>  | ✅ |
+| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_9.png"/>  | ✅ |
+| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_10.png"/> | ✅ |
+| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_11.png"/> | ✅ |
+| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_12.png"/> | ✅ |
+| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_13.png"/> | ✅ |
+| <img width="200" src="https://github.com/MalinthaSamarasinghe/currency_labs/blob/master/screenshots/ss_14.png"/> | ✅ |
