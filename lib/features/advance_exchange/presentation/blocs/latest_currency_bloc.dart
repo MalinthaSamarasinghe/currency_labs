@@ -43,9 +43,6 @@ class LatestCurrencyBloc extends HydratedBloc<LatestCurrencyEvent, LatestCurrenc
         String message = "";
         if (failure is ServerFailure) {
           message = failure.message;
-          if(message == "Bad request!") {
-            message = "Your subscription plan only allows EUR-based currency conversion!";
-          }
         } else if (failure is NoConnectionFailure) {
           message = "Please check your internet connection and try again!";
         } else {

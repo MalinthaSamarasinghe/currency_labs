@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:dio/dio.dart';
 import '../locales/locale_keys.g.dart';
 import '../models/dio_response_model.dart';
@@ -15,6 +16,16 @@ class ServerException implements Exception {
   /// Constructor for Dio package
   ServerException.fromDioError(DioException dioError) {
     data = ServerErrorData.fromDioError(dioError);
+    log("ServerErrorData --> responseData.data: ${data?.responseData.data}");
+    log("ServerErrorData --> responseData.statusCode: ${data?.responseData.statusCode}");
+    log("ServerErrorData --> responseData.statusMessage: ${data?.responseData.statusMessage}");
+    log("ServerErrorData --> responseData.isRedirect: ${data?.responseData.isRedirect}\n");
+    log("ServerErrorData --> requestData.url: ${data?.requestData.url}");
+    log("ServerErrorData --> requestData.method: ${data?.requestData.method}");
+    log("ServerErrorData --> requestData.headers: ${data?.requestData.headers}");
+    log("ServerErrorData --> requestData.sendTimeout: ${data?.requestData.sendTimeout}");
+    log("ServerErrorData --> requestData.receiveTimeout: ${data?.requestData.receiveTimeout}");
+    log("ServerErrorData --> requestData.contentType: ${data?.requestData.contentType}\n");
     switch (dioError.type) {
       case DioExceptionType.cancel:
         errorMessage = LocaleKeys.common_errors_server_requestCancelled.tr();
@@ -35,13 +46,16 @@ class ServerException implements Exception {
       case DioExceptionType.badResponse:
         errorMessage = _handleStatusCode(dioError.response);
         break;
+      case DioExceptionType.connectionError:
+        errorMessage = LocaleKeys.common_errors_server_socketException.tr();
+        break;
       case DioExceptionType.unknown:
-        if ((dioError.message ?? "").contains('SocketException')) {
-          errorMessage = LocaleKeys.common_errors_server_socketException.tr();
-          unexpectedError = false;
-          break;
-        }
         errorMessage = LocaleKeys.common_errors_server_unexpectedError.tr();
+        unexpectedError = true;
+        break;
+      case DioExceptionType.badCertificate:
+        // Translate the message
+        errorMessage = "Bad Certificate";
         unexpectedError = true;
         break;
       default:
@@ -59,10 +73,14 @@ class ServerException implements Exception {
         return LocaleKeys.common_errors_server_redirectionFurtherActionNeeds.tr();
       case 400:
         unexpectedError = true;
-        return LocaleKeys.common_errors_server_badRequest.tr();
+        // return LocaleKeys.common_errors_server_badRequest.tr();
+        // Translate the message
+        return "Your subscription plan only allows EUR-based currency conversion! Please upgrade your Subscription Plan.";
       case 401:
         unexpectedError = false;
-        return LocaleKeys.common_errors_server_authenticationFail.tr();
+        // return LocaleKeys.common_errors_server_authenticationFail.tr();
+        // Translate the message
+        return "You have not supplied an API Access Key. Please contact support.";
       case 403:
         unexpectedError = false;
         return LocaleKeys.common_errors_server_authenticatedUser.tr();
@@ -92,7 +110,9 @@ class ServerException implements Exception {
         return LocaleKeys.common_failure_somethingWrongTryAgain.tr();
       case 429:
         unexpectedError = true;
-        return LocaleKeys.common_errors_server_toManyRequests.tr();
+        // return LocaleKeys.common_errors_server_toManyRequests.tr();
+        // Translate the message
+        return "Your monthly usage limit has been reached. Please upgrade your Subscription Plan.";
       case 500:
         unexpectedError = true;
         return LocaleKeys.common_errors_server_serverError.tr();
@@ -150,6 +170,9 @@ class ServerException implements Exception {
 
 /// Thrown during the sign up process if a failure occurs.
 class SignUpWithEmailAndPasswordFailure implements Exception {
+  /// The associated error message.
+  final String message;
+
   const SignUpWithEmailAndPasswordFailure([
     this.message = 'An unknown exception occurred.',
   ]);
@@ -183,14 +206,14 @@ class SignUpWithEmailAndPasswordFailure implements Exception {
         return const SignUpWithEmailAndPasswordFailure();
     }
   }
-
-  /// The associated error message.
-  final String message;
 }
 
 /// Thrown during the login process if a failure occurs.
 /// https://pub.dev/documentation/firebase_auth/latest/firebase_auth/FirebaseAuth/signInWithEmailAndPassword.html
 class LogInWithEmailAndPasswordFailure implements Exception {
+  /// The associated error message.
+  final String message;
+
   /// {@macro log_in_with_email_and_password_failure}
   const LogInWithEmailAndPasswordFailure([
     this.message = 'An unknown exception occurred.',
@@ -224,14 +247,14 @@ class LogInWithEmailAndPasswordFailure implements Exception {
         return const LogInWithEmailAndPasswordFailure();
     }
   }
-
-  /// The associated error message.
-  final String message;
 }
 
 /// Thrown during the sign in with google process if a failure occurs.
 /// https://pub.dev/documentation/firebase_auth/latest/firebase_auth/FirebaseAuth/signInWithCredential.html
 class LogInWithGoogleFailure implements Exception {
+  /// The associated error message.
+  final String message;
+
   /// {@macro log_in_with_google_failure}
   const LogInWithGoogleFailure([
     this.message = 'An unknown exception occurred.',
@@ -277,13 +300,13 @@ class LogInWithGoogleFailure implements Exception {
         return const LogInWithGoogleFailure();
     }
   }
-
-  /// The associated error message.
-  final String message;
 }
 
 /// Thrown during the Cloud Storage process if a failure occurs.
 class CloudStorageFailure implements Exception {
+  /// The associated error message.
+  final String message;
+
   const CloudStorageFailure([
     // Translate the message
     this.message = 'An unknown exception occurred.',
@@ -360,9 +383,6 @@ class CloudStorageFailure implements Exception {
         return const CloudStorageFailure();
     }
   }
-
-  /// The associated error message.
-  final String message;
 }
 
 /// Thrown during the logout process if a failure occurs.
