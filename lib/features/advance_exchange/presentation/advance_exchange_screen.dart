@@ -47,7 +47,7 @@ class _AdvanceExchangeScreenState extends State<AdvanceExchangeScreen> with Sing
 
   @override
   void initState() {
-    context.read<LatestCurrencyBloc>().baseAmountController.text = (context.read<LatestCurrencyBloc>().state.baseLatestCurrency.amount ?? 1.00).toStringAsFixed(2);
+    context.read<LatestCurrencyBloc>().baseAmountController.text = (context.read<LatestCurrencyBloc>().state.baseLatestCurrency.amount ?? 0.0).toStringAsFixed(2);
     super.initState();
   }
 

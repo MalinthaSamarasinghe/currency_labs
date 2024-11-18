@@ -13,7 +13,7 @@ class LatestCurrencyState extends Equatable {
       isoCode: "DE",
       base: "EUR",
       date: null,
-      rates: 1.00,
+      rates: 0.0,
       amount: 1.00,
     ),
     this.savedCurrencyList = const [],

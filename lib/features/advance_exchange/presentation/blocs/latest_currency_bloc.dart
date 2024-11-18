@@ -56,8 +56,8 @@ class LatestCurrencyBloc extends HydratedBloc<LatestCurrencyEvent, LatestCurrenc
       (data) {
         final ratesMap = data.rates as Map<String, double>;
         double rateValue = ratesMap[event.currencySymbol] ?? 0.0;
-        num amount = (state.baseLatestCurrency.amount ?? 1.00) * rateValue;
-        debugPrint("Base Amount: ${state.baseLatestCurrency.amount ?? 1.00} * Rate Value: $rateValue = Amount: $amount");
+        num amount = (state.baseLatestCurrency.amount ?? 0.0) * rateValue;
+        debugPrint("Base Amount: ${state.baseLatestCurrency.amount ?? 0.0} * Rate Value: $rateValue = Amount: $amount");
 
         List<SavedCurrencyEntity> tempList = state.savedCurrencyList.toList();
         tempList.add(SavedCurrencyEntity(
@@ -68,8 +68,10 @@ class LatestCurrencyBloc extends HydratedBloc<LatestCurrencyEvent, LatestCurrenc
           rates: rateValue as num,
           amount: amount,
         ));
+
         emit(LatestCurrencyState(
           currencyStatus: BlocStateStatus.loadSuccess,
+          baseLatestCurrency: state.baseLatestCurrency,
           savedCurrencyList: tempList,
         ));
       },
@@ -78,27 +80,27 @@ class LatestCurrencyBloc extends HydratedBloc<LatestCurrencyEvent, LatestCurrenc
 
   FutureOr<void> _changeBaseAmountEvent(ChangeBaseAmountEvent event, Emitter<LatestCurrencyState> emit) {
     if(state.savedCurrencyList.isNotEmpty) {
-      SavedCurrencyEntity tempBaseLatestCurrency = state.baseLatestCurrency.copyWith(amount: num.tryParse(event.amount) ?? 1.00);
+      SavedCurrencyEntity? tempBaseLatestCurrency = state.baseLatestCurrency.copyWith(amount: num.tryParse(event.amount) ?? 0.0);
       emit(state.copyWith(
         currencyStatus: BlocStateStatus.initial,
-        savedCurrencyList: [],
         baseLatestCurrency: tempBaseLatestCurrency,
+        savedCurrencyList: [],
       ));
     } else {
       emit(state.copyWith(
         currencyStatus: BlocStateStatus.initial,
-        baseLatestCurrency: state.baseLatestCurrency.copyWith(amount: num.tryParse(event.amount) ?? 1.00),
+        baseLatestCurrency: state.baseLatestCurrency.copyWith(amount: num.tryParse(event.amount) ?? 0.0),
       ));
     }
   }
 
   FutureOr<void> _changeBaseCurrencyEvent(ChangeBaseCurrencyEvent event, Emitter<LatestCurrencyState> emit) {
     if(state.savedCurrencyList.isNotEmpty) {
-      SavedCurrencyEntity tempBaseLatestCurrency = state.baseLatestCurrency.copyWith(base: event.currencySymbol, isoCode: event.isoCode);
+      SavedCurrencyEntity? tempBaseLatestCurrency = state.baseLatestCurrency.copyWith(base: event.currencySymbol, isoCode: event.isoCode);
       emit(state.copyWith(
         currencyStatus: BlocStateStatus.loadSuccess,
-        savedCurrencyList: [],
         baseLatestCurrency: tempBaseLatestCurrency,
+        savedCurrencyList: [],
       ));
     } else {
       emit(state.copyWith(
@@ -132,8 +134,8 @@ class LatestCurrencyBloc extends HydratedBloc<LatestCurrencyEvent, LatestCurrenc
       (data) {
         final ratesMap = data.rates as Map<String, double>;
         double rateValue = ratesMap[event.currencySymbol] ?? 0.0;
-        num amount = (state.baseLatestCurrency.amount ?? 1.00) * rateValue;
-        debugPrint("Base Amount: ${state.baseLatestCurrency.amount ?? 1.00} * Rate Value: $rateValue = Amount: $amount");
+        num amount = (state.baseLatestCurrency.amount ?? 0.0) * rateValue;
+        debugPrint("Base Amount: ${state.baseLatestCurrency.amount ?? 0.0} * Rate Value: $rateValue = Amount: $amount");
 
         List<SavedCurrencyEntity> tempList = state.savedCurrencyList.toList();
 
@@ -148,6 +150,7 @@ class LatestCurrencyBloc extends HydratedBloc<LatestCurrencyEvent, LatestCurrenc
 
         emit(LatestCurrencyState(
           currencyStatus: BlocStateStatus.loadSuccess,
+          baseLatestCurrency: state.baseLatestCurrency,
           savedCurrencyList: tempList,
         ));
       },
